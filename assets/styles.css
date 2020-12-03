@@ -1,0 +1,337 @@
+/* ---------------------------------------------------------- */
+/* theme*/
+/* ---------------------------------------------------------- */
+
+.nav-bg {
+  background-color: rgba(77, 95, 138, 1);
+}
+
+.side-nav-bg {
+  background-color: rgba(77, 95, 138, 1);
+}
+
+.navbar-light {
+  background-color: rgba(77, 95, 138, 1);
+  color: rgba(206, 172, 104, 1);
+}
+
+body,
+.light-theme {
+  background-color: rgb(120, 133, 161);
+  margin: 0;
+}
+
+.jumbotron,
+.light-theme {
+  background-color: rgb(226, 232, 245);
+}
+
+.btn-primary {
+  background-color: rgba(134, 67, 134, 1);
+  border: 1px solid rgba(134, 67, 134, 1);
+  width: 250px;
+}
+
+.btn-primary:hover {
+  background-color: rgba(116, 41, 116, 1);
+  border: 1px solid rgba(116, 41, 116, 1);
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-color: rgba(116, 41, 116, 1);
+  border: 1px solid rgba(116, 41, 116, 1);
+  box-shadow: none;
+}
+/* ---------------------------------------------------------- */
+/*Animations*/
+/* ---------------------------------------------------------- */
+
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}
+
+/* ---------------------------------------------------------- */
+/*Fonts*/
+/* ---------------------------------------------------------- */
+
+h1,
+.display-2 {
+  font-family: "Goldman", sans-serif;
+}
+
+.snowfall-font {
+  text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
+    0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
+    0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%),
+    0 7px 0 hsl(174, 5%, 61%), 0 8px 0 hsl(174, 5%, 60%),
+    0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2),
+    0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2),
+    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------------------------------------------------- */
+/* Horizontal Scroll sections */
+/* ---------------------------------------------------------- */
+
+.scrollable {
+  background-color: transparent;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.scrollable a {
+  display: inline-block;
+}
+
+.scrollable-thumbnails .thumbnail {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.scrollable-thumbnails {
+  background-color: transparent;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+@media only screen and (min-width: 721px) {
+  .scrollable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-decoration: none;
+  }
+}
+
+/* Scrollbar Width*/
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: rgb(193, 198, 209);
+  border-radius: 5px;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(120, 133, 161);
+  border-radius: 5px;
+}
+
+/* Scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(77, 95, 138, 1);
+}
+
+/* ---------------------------------------------------------- */
+/* Navbar */
+/* ---------------------------------------------------------- */
+
+#about-link,
+#projects-link,
+#contact-link {
+  color: white;
+  font-size: 20px;
+}
+#about-link:hover,
+#projects-link:hover,
+#contact-link:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------- */
+/* Header */
+/* ---------------------------------------------------------- */
+
+.header-container {
+  max-width: 1550px;
+}
+
+#divider {
+  border: none;
+  height: 1px;
+  background-color: rgb(68, 67, 67);
+}
+
+.technologies i {
+  color: white;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+/* ---------------------------------------------------------- */
+/*About*/
+/* ---------------------------------------------------------- */
+
+.about-container {
+  max-width: 1550px;
+  padding-top: 25px;
+}
+
+.side-nav span:hover {
+  background-color: rgba(116, 41, 116, 1);
+  border-radius: 4px 10px 10px 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#headshot {
+  border-radius: 15px;
+}
+
+.history {
+  display: none;
+}
+
+.game {
+  display: none;
+}
+
+.start-game {
+  display: none;
+}
+
+.start-game:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------- */
+/* Projects */
+/* ---------------------------------------------------------- */
+
+#projects {
+  width: 100%;
+  background-color: rgb(226, 232, 245);
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.projects-container {
+  max-width: 1550px;
+  padding-top: 25px;
+}
+
+.thumbnail {
+  width: 11em;
+  margin-top: 5px;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  border-radius: 5px;
+  background-color: rgb(120, 133, 161);
+  cursor: pointer;
+}
+
+.thumbnail:hover {
+  background-color: rgba(77, 95, 138, 1);
+}
+
+.thumbnail h5 {
+  padding: 0.25em 0px;
+}
+
+.thumbnail i {
+  padding: 0px 0px 0.25em;
+  color: white;
+}
+
+.thumbnail .tech-select {
+  color: rgba(134, 67, 134, 1);
+}
+
+.selected {
+  background-color: rgb(36, 45, 66);
+}
+
+#divider2 {
+  border: none;
+  height: 1px;
+  background-color: rgb(177, 177, 177);
+}
+
+.download {
+  color: rgba(116, 41, 116, 1);
+}
+
+.download:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: orange;
+}
+
+.screenshots {
+  width: 350px;
+}
+
+.fuji-content {
+  display: none;
+  margin-top: 25px;
+}
+
+.creature-content {
+  display: none;
+  margin-top: 25px;
+}
+
+.static-content {
+  display: none;
+  margin-top: 25px;
+}
+
+.api-content {
+  display: none;
+  margin-top: 25px;
+}
+
+.game-content {
+  display: none;
+  margin-top: 25px;
+}
+
+.thumbnail-img {
+  width: 350px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0px 0px 25px;
+}
+
+/* ---------------------------------------------------------- */
+/* Contact */
+/* ---------------------------------------------------------- */
+
+.form-element {
+  margin: 10px;
+  max-width: 650px;
+}
+
+.form-button {
+  margin: 25px;
+}
+
+/* ---------------------------------------------------------- */
+/* Footer */
+/* ---------------------------------------------------------- */
+
+.footer i {
+  margin: 15px 25px;
+  color: rgb(36, 45, 66);
+}
+
+/* show animation has to come last for it to work */
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
