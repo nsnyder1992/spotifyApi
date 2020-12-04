@@ -26,11 +26,9 @@ $(document).ready(function () {
 
   //variables
   let artists = [];
-  let spotifyContent = $("spotify-content");
 
   //click functions
   spotifyApi.click(() => getSpotifyData());
-  spotifyContent.click((e) => redirectSpotify(e));
 
   async function getSpotifyData() {
     // If there is no token, redirect to Spotify authorization
@@ -65,6 +63,7 @@ $(document).ready(function () {
 
     json.items.map((artist) => {
       let col = document.createElement("div");
+      let a = document.createElement("a");
       let img = document.createElement("img");
       let name = document.createElement("h6");
 
@@ -73,16 +72,19 @@ $(document).ready(function () {
 
       //add classes
       col.className = "col spotify-content";
+      a.className = "artist-link";
       name.className = "artist-name";
       img.className = "artist-image";
 
       //add content
+      a.href = artist.href + `&token=${_token}`;
       name.innerText = artist.name;
       img.src = artist.images[2].url;
       col.id = artist.id;
 
       //create layout of spotify-content
-      col.appendChild(img);
+      a.appendChild(img);
+      col.appendChild(a);
       col.appendChild(name);
       row.appendChild(col);
     });
@@ -90,15 +92,5 @@ $(document).ready(function () {
     //insert content at insert point
     container.appendChild(row);
     $("#spotify-insert").append(container);
-    spotifyContent = $("spotify-content");
-  }
-
-  function redirectSpotify() {
-    console.log(e);
-    for (artist of artists) {
-      if (artist.id == e.target.id) {
-        window.open(artist.href + "&token=" + _token);
-      }
-    }
   }
 });
