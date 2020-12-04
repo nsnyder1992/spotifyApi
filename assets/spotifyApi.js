@@ -73,5 +73,5 @@ function displayArtists(json) {
   });
 
   container.appendChild(row);
-  container.appendTo($("#spotify-insert"));
+  $("#spotify-insert").append(container);
 }
