@@ -27,6 +27,11 @@ $(document).ready(function () {
   //variables
   let artists = [];
 
+  //set button text
+  !_token
+    ? (spotifyApi.innerText = "Authorize")
+    : (spotifyApi.innerText = "Try it out!");
+
   //click functions
   spotifyApi.click(() => getSpotifyData());
 
@@ -35,13 +40,10 @@ $(document).ready(function () {
     window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
       "%20"
     )}&response_type=token&show_dialog=true`;
-    spotifyApi.innerText = "Try it out!";
   }
 
   async function getSpotifyData() {
-    if (!_token) {
-      await checkAuth();
-    }
+    if (!_token) checkAuth();
 
     // Make a call using the token
     let topNum = 5;
