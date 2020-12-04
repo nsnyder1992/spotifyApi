@@ -63,21 +63,25 @@ function displayArtists(json) {
 
   json.items.map((artist) => {
     let col = document.createElement("div");
+    let a = document.createElement("a");
     let img = document.createElement("img");
     let name = document.createElement("h6");
 
     //add classes
     col.className = "col spotify-content";
+    a.className = "artist-link";
     name.className = "artist-name";
     img.className = "artist-image";
 
     //add content
+    a.href = artist.href;
     name.innerText = artist.name;
     img.src = artist.images[2].url;
 
     //create layout of spotify-content
+    a.appendChild(img);
+    col.appendChild(a);
     col.appendChild(name);
-    col.appendChild(img);
     row.appendChild(col);
   });
 

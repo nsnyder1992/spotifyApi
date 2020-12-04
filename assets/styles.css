@@ -225,6 +225,8 @@ body,
 .artist-image {
   width: 160px;
   border-radius: 5px;
+
+  transition: opacity 0.2s, visibility 0.2s;
 }
 
 .artist-name {
@@ -235,8 +237,12 @@ body,
   visibility: hidden;
   opacity: 0;
 
-  /* transition effect. not necessary */
   transition: opacity 0.2s, visibility 0.2s;
+}
+
+.spotify-content:hover .artist-image {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .spotify-content:hover .artist-name {
