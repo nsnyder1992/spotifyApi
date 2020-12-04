@@ -26,7 +26,7 @@ $(document).ready(function () {
 
   //variables
   let artists = [];
-  let spotifyContent = $("spotify-content");
+  let spotifyContent;
 
   //click functions
   spotifyApi.click(() => getSpotifyData());
@@ -90,6 +90,7 @@ $(document).ready(function () {
     //insert content at insert point
     container.appendChild(row);
     $("#spotify-insert").append(container);
+    spotifyContent = $("spotify-content");
   }
 
   function redirectSpotify() {
