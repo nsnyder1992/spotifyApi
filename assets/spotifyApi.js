@@ -38,7 +38,8 @@ $(document).ready(function () {
     }
 
     // Make a call using the token
-    fetch("https://api.spotify.com/v1/me/top/artists", {
+    let topNum = 5;
+    fetch(`https://api.spotify.com/v1/me/top/artists?limit=${topNum}`, {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
@@ -58,7 +59,7 @@ function displayArtists(json) {
   let row = document.createElement("div");
   row.className = "row text-center";
 
-  json.items.splice(-15).map((artist) => {
+  json.items.map((artist) => {
     let col = document.createElement("div");
     let img = document.createElement("img");
     let name = document.createElement("h6");
