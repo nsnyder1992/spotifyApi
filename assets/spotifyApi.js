@@ -30,12 +30,12 @@ $(document).ready(function () {
   //click functions
   spotifyApi.click(() => getSpotifyData());
 
-  $("a").click((e) => {
-    if (e.target.className == "artist-link") {
-      e.preventDefault();
-      redirectArtist(e);
-    }
-  });
+  // $("a").click((e) => {
+  //   if (e.target.className == "artist-link") {
+  //     e.preventDefault();
+  //     redirectArtist(e);
+  //   }
+  // });
 
   async function getSpotifyData() {
     // If there is no token, redirect to Spotify authorization
@@ -84,7 +84,7 @@ $(document).ready(function () {
       img.className = "artist-image";
 
       //add content
-      a.href = artist.href + `&token=${_token}`;
+      a.href = artist.external_urls.spotify;
       a.target = "blank";
       name.innerText = artist.name;
       img.src = artist.images[2].url;
@@ -102,12 +102,13 @@ $(document).ready(function () {
     $("#spotify-insert").append(container);
   }
 
-  function redirectArtist(e) {
-    console.log(e);
-    for (artist of artists) {
-      if (artist.id == e.target.id) {
-        window.open(artists.id + `?Bearer=${_token}`);
-      }
-    }
-  }
+  // function redirectArtist(e) {
+  //   console.log(e);
+  //   const tab = window.open("about:blank");
+  //   for (artist of artists) {
+  //     if (artist.id == e.target.id) {
+  //       fetch("");
+  //     }
+  //   }
+  // }
 });
