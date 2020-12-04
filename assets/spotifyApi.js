@@ -70,9 +70,8 @@ function displayArtists(json) {
     col.appendChild(name);
     col.appendChild(img);
     row.appendChild(col);
-
-    item.appendTo();
   });
+
   container.appendChild(row);
   container.appendTo($("#spotify-insert"));
 }
