@@ -68,7 +68,7 @@ $(document).ready(function () {
           item.appendTo();
         });
         container.appendChild(row);
-        $("#spotify-insert").appendChild(container);
+        container.appendTo($("#spotify-insert"));
       })
       .catch((err) => console.log(err));
   }
