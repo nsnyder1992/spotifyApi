@@ -82,8 +82,7 @@ $(document).ready(function () {
       col.id = artist.id;
 
       //create layout of spotify-content
-      a.appendChild(img);
-      col.appendChild(a);
+      col.appendChild(img);
       col.appendChild(name);
       row.appendChild(col);
     });
