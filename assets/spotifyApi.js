@@ -48,6 +48,7 @@ $(document).ready(function () {
       .then(async (res) => await res.json())
       .then((json) => {
         console.log(json);
+        spotifyApi.innerText("Try it out!");
         displayArtists(json);
       })
       .catch((err) => console.log(err));
