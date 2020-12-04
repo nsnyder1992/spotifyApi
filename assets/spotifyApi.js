@@ -30,13 +30,6 @@ $(document).ready(function () {
   //click functions
   spotifyApi.click(() => getSpotifyData());
 
-  // $("a").click((e) => {
-  //   if (e.target.className == "artist-link") {
-  //     e.preventDefault();
-  //     redirectArtist(e);
-  //   }
-  // });
-
   async function getSpotifyData() {
     // If there is no token, redirect to Spotify authorization
     if (!_token) {
@@ -62,14 +55,15 @@ $(document).ready(function () {
 
   function displayArtists(json) {
     let container = document.createElement("div");
-    let row = document.createElement("div");
+    let content = document.createElement("div");
 
     //add bootstrap classes
     container.className = "container";
-    row.className = "row text-center";
+    content.className = "text-center";
+    scrollable.className = "scrollable";
 
     json.items.map((artist) => {
-      let col = document.createElement("div");
+      let artContent = document.createElement("div");
       let a = document.createElement("a");
       let img = document.createElement("img");
       let name = document.createElement("h6");
@@ -78,7 +72,7 @@ $(document).ready(function () {
       artists.push(artist);
 
       //add classes
-      col.className = "col spotify-content";
+      artContent.className = "spotify-content";
       a.className = "artist-link";
       name.className = "artist-name";
       img.className = "artist-image";
@@ -88,27 +82,18 @@ $(document).ready(function () {
       a.target = "blank";
       name.innerText = artist.name;
       img.src = artist.images[2].url;
-      col.id = artist.id;
+      artContent.id = artist.id;
 
       //create layout of spotify-content
       a.appendChild(img);
-      col.appendChild(a);
-      col.appendChild(name);
-      row.appendChild(col);
+      artContent.appendChild(a);
+      artContent.appendChild(name);
+      scrollable.appendChild(artContent);
     });
 
     //insert content at insert point
-    container.appendChild(row);
+    content.appendChild(scrollable);
+    container.appendChild(content);
     $("#spotify-insert").append(container);
   }
-
-  // function redirectArtist(e) {
-  //   console.log(e);
-  //   const tab = window.open("about:blank");
-  //   for (artist of artists) {
-  //     if (artist.id == e.target.id) {
-  //       fetch("");
-  //     }
-  //   }
-  // }
 });
