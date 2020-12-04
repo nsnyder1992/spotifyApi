@@ -35,6 +35,7 @@ $(document).ready(function () {
     window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
       "%20"
     )}&response_type=token&show_dialog=true`;
+    spotifyApi.innerText = "Try it out!";
   }
 
   async function getSpotifyData() {
@@ -50,7 +51,6 @@ $(document).ready(function () {
       .then(async (res) => await res.json())
       .then((json) => {
         console.log(json);
-        spotifyApi.innerText = "Try it out!";
         displayArtists(json);
       })
       .catch((err) => console.log(err));
