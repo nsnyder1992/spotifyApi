@@ -218,7 +218,11 @@ body,
 }
 
 /* Spotify insert */
-.spotify-insert > img {
+/* .spotify-insert > img {
   width: 160px;
   border-radius: 5px;
+} */
+
+.show {
+  display: block;
 }
