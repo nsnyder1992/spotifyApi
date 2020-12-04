@@ -56,6 +56,7 @@ $(document).ready(function () {
   function displayArtists(json) {
     let container = document.createElement("div");
     let content = document.createElement("div");
+    let scrollable = document.createElement("div");
 
     //add bootstrap classes
     container.className = "container";
