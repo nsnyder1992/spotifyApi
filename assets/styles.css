@@ -21,11 +21,6 @@ body,
   margin: 0;
 }
 
-.jumbotron,
-.light-theme {
-  background-color: rgb(226, 232, 245);
-}
-
 .btn-primary {
   background-color: rgba(134, 67, 134, 1);
   border: 1px solid rgba(134, 67, 134, 1);
@@ -48,32 +43,6 @@ body,
 /* ---------------------------------------------------------- */
 /*Animations*/
 /* ---------------------------------------------------------- */
-
-.grow {
-  transition: all 0.2s ease-in-out;
-}
-.grow:hover {
-  transform: scale(1.1);
-}
-
-/* ---------------------------------------------------------- */
-/*Fonts*/
-/* ---------------------------------------------------------- */
-
-h1,
-.display-2 {
-  font-family: "Goldman", sans-serif;
-}
-
-.snowfall-font {
-  text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
-    0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
-    0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%),
-    0 7px 0 hsl(174, 5%, 61%), 0 8px 0 hsl(174, 5%, 60%),
-    0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2),
-    0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2),
-    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
-}
 
 /* ---------------------------------------------------------- */
 /* Horizontal Scroll sections */
@@ -145,63 +114,6 @@ h1,
 #about-link:hover,
 #projects-link:hover,
 #contact-link:hover {
-  color: orange;
-  cursor: pointer;
-}
-
-/* ---------------------------------------------------------- */
-/* Header */
-/* ---------------------------------------------------------- */
-
-.header-container {
-  max-width: 1550px;
-}
-
-#divider {
-  border: none;
-  height: 1px;
-  background-color: rgb(68, 67, 67);
-}
-
-.technologies i {
-  color: white;
-  cursor: pointer;
-  margin-bottom: 50px;
-}
-
-/* ---------------------------------------------------------- */
-/*About*/
-/* ---------------------------------------------------------- */
-
-.about-container {
-  max-width: 1550px;
-  padding-top: 25px;
-}
-
-.side-nav span:hover {
-  background-color: rgba(116, 41, 116, 1);
-  border-radius: 4px 10px 10px 4px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#headshot {
-  border-radius: 15px;
-}
-
-.history {
-  display: none;
-}
-
-.game {
-  display: none;
-}
-
-.start-game {
-  display: none;
-}
-
-.start-game:hover {
   color: orange;
   cursor: pointer;
 }
@@ -305,33 +217,8 @@ h1,
   margin: 0px 0px 25px;
 }
 
-/* ---------------------------------------------------------- */
-/* Contact */
-/* ---------------------------------------------------------- */
-
-.form-element {
-  margin: 10px;
-  max-width: 650px;
-}
-
-.form-button {
-  margin: 25px;
-}
-
-/* ---------------------------------------------------------- */
-/* Footer */
-/* ---------------------------------------------------------- */
-
-.footer i {
-  margin: 15px 25px;
-  color: rgb(36, 45, 66);
-}
-
-/* show animation has to come last for it to work */
-.show {
-  display: block;
-}
-
-.hide {
-  display: none;
+/* Spotify insert */
+.spotify-insert > img {
+  width: 160px;
+  border-radius: 5px;
 }
