@@ -46,30 +46,33 @@ $(document).ready(function () {
       .then((res) => res.json())
       .then((json) => {
         console.log(json);
-
-        let container = document.createElement("div");
-        container.className = "container";
-        let row = document.createElement("div");
-        row.classList = ["row", "text-center"];
-
-        json.items.map((artist) => {
-          let col = document.createElement("div");
-          let img = document.createElement("img");
-          let name = document.createElement("h6");
-
-          col.classList = ["col"];
-          name.innerText = artist.name;
-          img.src = artist.img[2];
-
-          col.appendChild(name);
-          col.appendChild(img);
-          row.appendChild(col);
-
-          item.appendTo();
-        });
-        container.appendChild(row);
-        container.appendTo($("#spotify-insert"));
+        displayArtists(json);
       })
       .catch((err) => console.log(err));
   }
 });
+
+function displayArtists(json) {
+  let container = document.createElement("div");
+  container.className = "container";
+  let row = document.createElement("div");
+  row.classList = ["row", "text-center"];
+
+  json.items.map((artist) => {
+    let col = document.createElement("div");
+    let img = document.createElement("img");
+    let name = document.createElement("h6");
+
+    col.classList = ["col"];
+    name.innerText = artist.name;
+    img.src = artist.img[2];
+
+    col.appendChild(name);
+    col.appendChild(img);
+    row.appendChild(col);
+
+    item.appendTo();
+  });
+  container.appendChild(row);
+  container.appendTo($("#spotify-insert"));
+}
