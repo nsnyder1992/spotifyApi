@@ -58,6 +58,10 @@ body,
   display: inline-block;
 }
 
+.scrollable .artist-content {
+  display: inline-block;
+}
+
 .scrollable-thumbnails .thumbnail {
   display: inline-block;
   margin-bottom: 10px;

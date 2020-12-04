@@ -60,7 +60,7 @@ $(document).ready(function () {
     //add bootstrap classes
     container.className = "container";
     content.className = "text-center";
-    scrollable.className = "scrollable";
+    scrollable.className = "scrollable spotify-content";
 
     json.items.map((artist) => {
       let artContent = document.createElement("div");
@@ -72,7 +72,7 @@ $(document).ready(function () {
       artists.push(artist);
 
       //add classes
-      artContent.className = "spotify-content";
+      artContent.className = "artist-content";
       a.className = "artist-link";
       name.className = "artist-name";
       img.className = "artist-image";
