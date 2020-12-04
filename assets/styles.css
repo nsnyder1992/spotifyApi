@@ -6,10 +6,6 @@
   background-color: rgba(77, 95, 138, 1);
 }
 
-.side-nav-bg {
-  background-color: rgba(77, 95, 138, 1);
-}
-
 .navbar-light {
   background-color: rgba(77, 95, 138, 1);
   color: rgba(206, 172, 104, 1);
@@ -66,7 +62,7 @@ body,
 
 .scrollable-artists .artist-content {
   display: inline-block;
-  margin: 10px 0px;
+  margin: 10px 2px;
 }
 
 .scrollable-thumbnails .thumbnail {
@@ -103,7 +99,7 @@ body,
 
 /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(120, 133, 161);
+  background: rgb(89 99 119);
   border-radius: 5px;
 }
 
@@ -129,112 +125,13 @@ body,
   cursor: pointer;
 }
 
-/* ---------------------------------------------------------- */
-/* Projects */
-/* ---------------------------------------------------------- */
-
-#projects {
-  width: 100%;
-  background-color: rgb(226, 232, 245);
-  margin-top: 50px;
-  padding-bottom: 50px;
-}
-
-.projects-container {
-  max-width: 1550px;
-  padding-top: 25px;
-}
-
-.thumbnail {
-  width: 11em;
-  margin-top: 5px;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  border-radius: 5px;
-  background-color: rgb(120, 133, 161);
-  cursor: pointer;
-}
-
-.thumbnail:hover {
-  background-color: rgba(77, 95, 138, 1);
-}
-
-.thumbnail h5 {
-  padding: 0.25em 0px;
-}
-
-.thumbnail i {
-  padding: 0px 0px 0.25em;
-  color: white;
-}
-
-.thumbnail .tech-select {
-  color: rgba(134, 67, 134, 1);
-}
-
-.selected {
-  background-color: rgb(36, 45, 66);
-}
-
-#divider2 {
-  border: none;
-  height: 1px;
-  background-color: rgb(177, 177, 177);
-}
-
-.download {
-  color: rgba(116, 41, 116, 1);
-}
-
-.download:hover {
-  text-decoration: none;
-  cursor: pointer;
-  color: orange;
-}
-
-.screenshots {
-  width: 350px;
-}
-
-.fuji-content {
-  display: none;
-  margin-top: 25px;
-}
-
-.creature-content {
-  display: none;
-  margin-top: 25px;
-}
-
-.static-content {
-  display: none;
-  margin-top: 25px;
-}
-
-.api-content {
-  display: none;
-  margin-top: 25px;
-}
-
-.game-content {
-  display: none;
-  margin-top: 25px;
-}
-
-.thumbnail-img {
-  width: 350px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin: 0px 0px 25px;
-}
-
 /* Spotify insert */
 .spotify-content {
   margin: 10px 0px;
 }
 
-.spotify-artist {
-  margin: 0px 5px;
+.artist-content {
+  margin: 2px 2px;
 }
 
 .artist-image {
@@ -255,12 +152,12 @@ body,
   transition: opacity 0.2s, visibility 0.2s;
 }
 
-.spotify-artist:hover .artist-image {
+.artist-content:hover .artist-image {
   opacity: 0.5;
   cursor: pointer;
 }
 
-.spotify-artist:hover .artist-name {
+.artist-content:hover .artist-name {
   visibility: visible;
   opacity: 1;
 }
