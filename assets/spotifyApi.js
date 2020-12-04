@@ -2,10 +2,8 @@ $(document).ready(function () {
   //spotify api button
   const spotifyApi = $("#spotify");
 
+  //spotify constants
   const authEndpoint = "https://accounts.spotify.com/authorize";
-
-  // Replace with your app's client ID, redirect URI and desired scopes
-  // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   const clientId = "60c69366ae1e45d1adbfb0614a57e993";
   const redirectUri = "https://nsnyder1992.github.io/spotifyApi/";
   const scopes = ["user-top-read"];
@@ -22,24 +20,29 @@ $(document).ready(function () {
       return initial;
     }, {});
   window.location.hash = "";
-  spotifyApi.click(() => getSpotifyData());
 
   // Set token
   let _token = hash.access_token;
 
-  function getSpotifyData() {
+  //variables
+  let artists = [];
+  let spotifyContent = $("spotify-content");
+
+  //click functions
+  spotifyApi.click(() => getSpotifyData());
+  spotifyContent.click((e) => redirectSpotify(e));
+
+  async function getSpotifyData() {
     // If there is no token, redirect to Spotify authorization
     if (!_token) {
       window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
         "%20"
       )}&response_type=token&show_dialog=true`;
-    } else {
-      console.log(_token);
     }
 
     // Make a call using the token
     let topNum = 5;
-    fetch(`https://api.spotify.com/v1/me/top/artists?limit=${topNum}`, {
+    await fetch(`https://api.spotify.com/v1/me/top/artists?limit=${topNum}`, {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
@@ -51,41 +54,51 @@ $(document).ready(function () {
       })
       .catch((err) => console.log(err));
   }
+
+  function displayArtists(json) {
+    let container = document.createElement("div");
+    let row = document.createElement("div");
+
+    //add bootstrap classes
+    container.className = "container";
+    row.className = "row text-center";
+
+    json.items.map((artist) => {
+      let col = document.createElement("div");
+      let img = document.createElement("img");
+      let name = document.createElement("h6");
+
+      //add to artists array
+      artists.push(artist);
+
+      //add classes
+      col.className = "col spotify-content";
+      name.className = "artist-name";
+      img.className = "artist-image";
+
+      //add content
+      name.innerText = artist.name;
+      img.src = artist.images[2].url;
+      col.id = artist.id;
+
+      //create layout of spotify-content
+      a.appendChild(img);
+      col.appendChild(a);
+      col.appendChild(name);
+      row.appendChild(col);
+    });
+
+    //insert content at insert point
+    container.appendChild(row);
+    $("#spotify-insert").append(container);
+  }
+
+  function redirectSpotify() {
+    console.log(e);
+    for (artist of artists) {
+      if (artist.id == e.target.id) {
+        window.open(artist.href + "&token=" + _token);
+      }
+    }
+  }
 });
-
-function displayArtists(json) {
-  let container = document.createElement("div");
-  let row = document.createElement("div");
-
-  //add bootstrap classes
-  container.className = "container";
-  row.className = "row text-center";
-
-  json.items.map((artist) => {
-    let col = document.createElement("div");
-    let a = document.createElement("a");
-    let img = document.createElement("img");
-    let name = document.createElement("h6");
-
-    //add classes
-    col.className = "col spotify-content";
-    a.className = "artist-link";
-    name.className = "artist-name";
-    img.className = "artist-image";
-
-    //add content
-    a.href = artist.href;
-    name.innerText = artist.name;
-    img.src = artist.images[2].url;
-
-    //create layout of spotify-content
-    a.appendChild(img);
-    col.appendChild(a);
-    col.appendChild(name);
-    row.appendChild(col);
-  });
-
-  //insert content at insert point
-  container.appendChild(row);
-  $("#spotify-insert").append(container);
-}
