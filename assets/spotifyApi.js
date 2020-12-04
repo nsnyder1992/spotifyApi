@@ -61,7 +61,7 @@ $(document).ready(function () {
     //add bootstrap classes
     container.className = "container";
     content.className = "text-center";
-    scrollable.className = "scrollable spotify-content";
+    scrollable.className = "scrollable-artists spotify-content";
 
     json.items.map((artist) => {
       let artContent = document.createElement("div");
