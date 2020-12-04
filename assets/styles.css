@@ -219,16 +219,16 @@ body,
 
 /* Spotify insert */
 .spotify-content {
-  position: relative;
+  margin: 10px 0px;
 }
 
-.spotify-image {
+.artist-image {
   width: 160px;
   border-radius: 5px;
 }
 
 .artist-name {
-  position: absolute;
+  position: relative;
   top: -150px;
   background: transparent;
   color: #fff;
