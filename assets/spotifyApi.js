@@ -55,8 +55,10 @@ $(document).ready(function () {
 
 function displayArtists(json) {
   let container = document.createElement("div");
-  container.className = "container";
   let row = document.createElement("div");
+
+  //add bootstrap classes
+  container.className = "container";
   row.className = "row text-center";
 
   json.items.map((artist) => {
@@ -64,15 +66,22 @@ function displayArtists(json) {
     let img = document.createElement("img");
     let name = document.createElement("h6");
 
-    col.classList = ["col"];
+    //add classes
+    col.className = "col spotify-content";
+    name.className = "artist-name";
+    img.className = "artist-image";
+
+    //add content
     name.innerText = artist.name;
     img.src = artist.images[2].url;
 
+    //create layout of spotify-content
     col.appendChild(name);
     col.appendChild(img);
     row.appendChild(col);
   });
 
+  //insert content at insert point
   container.appendChild(row);
   $("#spotify-insert").append(container);
 }

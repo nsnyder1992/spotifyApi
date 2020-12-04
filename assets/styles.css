@@ -218,10 +218,31 @@ body,
 }
 
 /* Spotify insert */
-/* .spotify-insert > img {
+.spotify-content {
+  position: relative;
+}
+
+.spotify-image {
   width: 160px;
   border-radius: 5px;
-} */
+}
+
+.artist-name {
+  position: absolute;
+  top: -150px;
+  background: transparent;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.spotify-content:hover .artist-name {
+  visibility: visible;
+  opacity: 1;
+}
 
 .show {
   display: block;
