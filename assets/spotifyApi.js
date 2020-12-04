@@ -40,31 +40,17 @@ $(document).ready(function () {
     // Make a call using the token
     fetch("https://api.spotify.com/v1/me/top/artists", {
       headers: {
-        "Authorization": `Bearer ${_token}`
-      }
-    }).then(res => res.json())
-      .then(json => {
+        Authorization: `Bearer ${_token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => {
         console.log(json);
-        json.items.map(artist => {
+        json.items.map((artist) => {
           let item = $("<li>" + artist.name + "</li>");
-         item.appendTo($("#spotify-insert"));
-        })
+          item.appendTo($("#spotify-insert"));
+        });
       })
-      .catch(err => console.log(err))
-  //   $.ajax({
-  //     url: "https://api.spotify.com/v1/me/top/artists",
-  //     type: "GET",
-  //     beforeSend: function (xhr) {
-  //       xhr.setRequestHeader("Authorization", "Bearer " + _token);
-  //     },
-  //     success: function (data) {
-  //       console.log(data);
-  //       // Do something with the returned data
-  //       data.items.map(function (artist) {
-  //         let item = $("<li>" + artist.name + "</li>");
-  //         item.appendTo($("#spotify-insert"));
-  //       });
-  //     },
-  //   });
-  // }
+      .catch((err) => console.log(err));
+  }
 });
