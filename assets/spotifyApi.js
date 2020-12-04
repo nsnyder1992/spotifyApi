@@ -26,7 +26,7 @@ $(document).ready(function () {
 
   //variables
   let artists = [];
-  let spotifyContent;
+  let spotifyContent = $("spotify-content");
 
   //click functions
   spotifyApi.click(() => getSpotifyData());
