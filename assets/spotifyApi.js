@@ -39,7 +39,9 @@ $(document).ready(function () {
   }
 
   async function getSpotifyData() {
-    await checkAuth();
+    if (!_token) {
+      await checkAuth();
+    }
 
     // Make a call using the token
     let topNum = 5;
