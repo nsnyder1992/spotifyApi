@@ -65,7 +65,7 @@ function displayArtists(json) {
 
     col.classList = ["col"];
     name.innerText = artist.name;
-    img.src = artist.img[2].url;
+    img.src = artist.images[2].url;
 
     col.appendChild(name);
     col.appendChild(img);
