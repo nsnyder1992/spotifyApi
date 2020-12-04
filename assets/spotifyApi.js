@@ -56,7 +56,7 @@ function displayArtists(json) {
   let container = document.createElement("div");
   container.className = "container";
   let row = document.createElement("div");
-  row.classList = ["row", "text-center"];
+  row.className = "row text-center";
 
   json.items.map((artist) => {
     let col = document.createElement("div");
