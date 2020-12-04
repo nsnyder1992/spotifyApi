@@ -46,7 +46,7 @@ $(document).ready(function () {
       .then((res) => res.json())
       .then((json) => {
         console.log(json);
-        displayArtists(json);
+        //displayArtists(json);
       })
       .catch((err) => console.log(err));
   }
