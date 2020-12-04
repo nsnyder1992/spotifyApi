@@ -58,8 +58,15 @@ body,
   display: inline-block;
 }
 
-.scrollable .artist-content {
+.scrollable-artists {
+  background-color: transparent;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.scrollable-artists .artist-content {
   display: inline-block;
+  margin: 10px 5px;
 }
 
 .scrollable-thumbnails .thumbnail {
@@ -223,7 +230,7 @@ body,
 
 /* Spotify insert */
 .spotify-content {
-  margin: 10px 0px;
+  margin: 10px opx;
 }
 
 .artist-image {
@@ -244,12 +251,12 @@ body,
   transition: opacity 0.2s, visibility 0.2s;
 }
 
-.spotify-content:hover .artist-image {
+.spotify-artist:hover .artist-image {
   opacity: 0.5;
   cursor: pointer;
 }
 
-.spotify-content:hover .artist-name {
+.spotify-artist:hover .artist-name {
   visibility: visible;
   opacity: 1;
 }
