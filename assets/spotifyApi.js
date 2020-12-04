@@ -58,7 +58,8 @@ function displayArtists(json) {
   let row = document.createElement("div");
   row.className = "row text-center";
 
-  json.items.map((artist) => {
+  top5 = json.items.splice(5);
+  top5.map((artist) => {
     let col = document.createElement("div");
     let img = document.createElement("img");
     let name = document.createElement("h6");
