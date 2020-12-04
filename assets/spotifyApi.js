@@ -47,7 +47,7 @@ $(document).ready(function () {
         Authorization: `Bearer ${_token}`,
       },
     })
-      .then((res) => res.json())
+      .then(async (res) => await res.json())
       .then((json) => {
         console.log(json);
         displayArtists(json);
