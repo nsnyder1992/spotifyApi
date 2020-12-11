@@ -143,6 +143,7 @@ $(document).ready(function () {
     container.className = "container";
     table.className = "table-responsive table-dark table-striped";
     thead.className = "thead-dark";
+    songId.className = "first-col";
 
     //set scopes
     songId.scope = "col";
