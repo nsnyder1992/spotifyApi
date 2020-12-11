@@ -77,7 +77,7 @@ $(document).ready(function () {
 
     json.items.map((artist) => {
       let artContent = document.createElement("div");
-      // let a = document.createElement("a");
+      let a = document.createElement("a");
       let img = document.createElement("img");
       let name = document.createElement("h6");
 
@@ -86,21 +86,21 @@ $(document).ready(function () {
 
       //add classes
       artContent.className = "artist-content";
-      // a.className = "artist-link";
+      a.className = "artist-link";
       name.className = "artist-name";
       img.className = "artist-image";
 
       //add content
-      // a.href = artist.external_urls.spotify;
-      // a.target = "blank";
+      a.href = artist.external_urls.spotify;
+      a.target = "blank";
       name.innerText = artist.name;
       img.src = artist.images[2].url;
       artContent.id = artist.id;
 
       //create layout of spotify-content
-      // a.appendChild(img);
-      // artContent.appendChild(a);
-      artContent.appendChild(img);
+      a.appendChild(img);
+      artContent.appendChild(a);
+      // artContent.appendChild(img);
       artContent.appendChild(name);
       scrollable.appendChild(artContent);
     });
