@@ -42,12 +42,12 @@ $(document).ready(function () {
     )}&response_type=token&show_dialog=true`;
   }
 
-  async function getSpotifyData() {
+  function getSpotifyData() {
     getTopArtists();
     getTopTracks();
   }
 
-  function getTopArtists(){
+  async function getTopArtists() {
     if (!_token) checkAuth();
 
     // Make a call using the token
