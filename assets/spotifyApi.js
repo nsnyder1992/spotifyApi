@@ -131,5 +131,63 @@ $(document).ready(function () {
 
   function displayTopTracks(songs) {
     console.log(songs);
+    let container = document.createElement("div");
+
+    //create table
+    let table = document.createElement("table");
+    let thead = document.createElement("thead");
+    let tr1 = document.createElement("tr");
+    let tbody = document.createElement("tbody");
+
+    //create columns
+    let songId = document.createElement("th");
+    let songTitle = document.createElement("th");
+    let songAlbum = document.createElement("th");
+    let songArtist = document.createElement("th");
+
+    //add classes
+    container.className = "container text-center";
+    table.className = "table-responsive table-striped";
+    thead.className = "thead-dark";
+
+    //set scopes
+    songId.scope = "col";
+    songTitle.scope = "col";
+    songAlbum.scope = "col";
+    songArtist.scope = "col";
+
+    //append children
+    tr1.appendChild(songId);
+    tr1.appendChild(songTitle);
+    tr1.appendChild(songArtist);
+    tr1.appendChild(songAlbum);
+    thead.appendChild(tr1);
+    table.appendChild(thead);
+
+    for (i in songs.items) {
+      //create rows
+      let songTr = document.createElement("tr");
+      let id = document.createElement("th");
+      let title = document.createElement("th");
+      let album = document.createElement("th");
+      let artist = document.createElement("th");
+
+      //scope
+      id.scope = "row";
+
+      //set text
+      id.innerText = i;
+      title.innerText = songs.items[i].name;
+      album.innerText = songs.items[i].album.name;
+      artist.innerText = songs.items[i].artists[0].name;
+
+      //build table
+      songTr.appendChild(id);
+      songTr.appendChild(title);
+      songTr.appendChild(artist);
+      songTr.appendChild(album);
+      table.appendChild(songTr);
+    }
+    container.appendChild(table);
   }
 });
