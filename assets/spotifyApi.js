@@ -175,6 +175,9 @@ $(document).ready(function () {
       //scope
       id.scope = "row";
 
+      //classes
+      id.className = "first-col";
+
       //set text
       id.innerText = i;
       title.innerText = songs.items[i].name;

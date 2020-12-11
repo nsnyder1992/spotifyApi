@@ -162,6 +162,25 @@ body,
   opacity: 1;
 }
 
+table {
+  width: 100%;
+  text-align: left;
+  margin: 25px;
+  border-radius: 5px;
+}
+
+thead {
+  background-color: #101010;
+}
+
+th {
+  width: 2000px;
+}
+
+.first-col {
+  text-align: center;
+}
+
 .show {
   display: block;
 }
