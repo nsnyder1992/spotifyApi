@@ -150,6 +150,12 @@ $(document).ready(function () {
     songAlbum.scope = "col";
     songArtist.scope = "col";
 
+    //set text
+    songId.innerText = "#";
+    songTitle.innerText = "Title";
+    songAlbum.innerText = "Album";
+    songArtist.innerText = "Artist";
+
     //append children
     tr1.appendChild(songId);
     tr1.appendChild(songTitle);
