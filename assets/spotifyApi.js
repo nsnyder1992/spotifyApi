@@ -186,8 +186,9 @@ $(document).ready(function () {
       songTr.appendChild(title);
       songTr.appendChild(artist);
       songTr.appendChild(album);
-      table.appendChild(songTr);
+      tbody.appendChild(songTr);
     }
+    table.appendChild(tbody);
     container.appendChild(table);
   }
 });
