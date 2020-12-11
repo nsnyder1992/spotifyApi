@@ -140,8 +140,8 @@ $(document).ready(function () {
     let songArtist = document.createElement("th");
 
     //add classes
-    container.className = "container text-center";
-    table.className = "table-responsive table-striped";
+    container.className = "container";
+    table.className = "table-responsive table-dark table-striped";
     thead.className = "thead-dark";
 
     //set scopes
