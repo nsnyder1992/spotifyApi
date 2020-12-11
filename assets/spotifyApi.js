@@ -27,11 +27,6 @@ $(document).ready(function () {
   //variables
   let artists = [];
 
-  //set button text
-  !_token
-    ? (spotifyApi.innerText = "Authorize")
-    : (spotifyApi.innerText = "Try it out!");
-
   //click functions
   spotifyApi.click(() => getSpotifyData());
 
@@ -123,7 +118,6 @@ $(document).ready(function () {
     })
       .then(async (res) => await res.json())
       .then((json) => {
-        console.log(json);
         displayTopTracks(json);
       })
       .catch((err) => console.log(err));
@@ -188,7 +182,9 @@ $(document).ready(function () {
       songTr.appendChild(album);
       tbody.appendChild(songTr);
     }
+
     table.appendChild(tbody);
     container.appendChild(table);
+    $("#spotify-tables").append(container);
   }
 });
