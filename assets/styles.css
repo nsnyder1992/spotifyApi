@@ -181,6 +181,15 @@ th {
   text-align: center;
 }
 
+tr:hover {
+  background-color: #7d7e8c !important;
+  cursor: pointer;
+}
+
+thead {
+  background-color: #101010 !important;
+}
+
 .show {
   display: block;
 }
