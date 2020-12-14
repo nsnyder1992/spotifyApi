@@ -84,7 +84,7 @@ $(document).ready(function () {
 
     //create html elements
     let container = document.createElement("div");
-    let hr1 = document.createElement("hr");
+    // let hr1 = document.createElement("hr");
     let header = document.createElement("h4");
     let content = document.createElement("div");
     let scrollable = document.createElement("div");
@@ -100,7 +100,7 @@ $(document).ready(function () {
     header.innerText = "Your Top Artists";
 
     //append children
-    container.appendChild(hr1);
+    // container.appendChild(hr1);
     container.appendChild(header);
 
     //loop through each artist and display content
@@ -155,7 +155,7 @@ $(document).ready(function () {
     //create html elements
     let container = document.createElement("div");
     let tableHeader = document.createElement("h4");
-    let hr = document.createElement("hr");
+    // let hr = document.createElement("hr");
 
     //add classes
     container.className = "container";
@@ -165,7 +165,7 @@ $(document).ready(function () {
     tableHeader.innerText = `${artist.name}'s Top Tracks:`;
 
     //append children
-    $("#spotify-tables").append(hr);
+    // $("#spotify-tables").append(hr);
     $("#spotify-tables").append(tableHeader);
 
     //create table
