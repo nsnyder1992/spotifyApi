@@ -41,8 +41,8 @@ $(document).ready(function () {
   }
 
   function getSpotifyData() {
+    //fetch functions go here
     getTopArtists();
-    //getTopTracks();
   }
 
   async function getTopArtists() {
@@ -60,23 +60,6 @@ $(document).ready(function () {
       .catch((err) => console.log(err));
   }
 
-  async function getTopTracks() {
-    if (!_token) checkAuth();
-
-    // Make a call using the token
-    let topNum = 10;
-    await fetch(baseUrl + `me/top/tracks?limit=${topNum}`, {
-      headers: {
-        Authorization: `Bearer ${_token}`,
-      },
-    })
-      .then(async (res) => await res.json())
-      .then((json) => {
-        displayTopTracks(json);
-      })
-      .catch((err) => console.log(err));
-  }
-
   async function getArtistTracks(id) {
     let countryCode = "US";
 
@@ -90,18 +73,14 @@ $(document).ready(function () {
     })
       .then(async (res) => await res.json())
       .then((json) => {
-        console.log(json);
         artistsSongs[id] = json;
-        //displayTopTracks(json, true);
       })
       .catch((err) => console.log(err));
   }
 
   function displayArtists(json) {
     //delete current elements
-    while ($("#spotify-tables").first()) {
-      $("#spotify-tables").first().remove();
-    }
+    $("#spotify-insert").empty();
 
     //create html elements
     let container = document.createElement("div");
@@ -118,7 +97,6 @@ $(document).ready(function () {
       artists.push(artist);
 
       //get artists top songs
-      console.log(artist);
       getArtistTracks(artist.id);
 
       //create html elements
@@ -166,9 +144,7 @@ $(document).ready(function () {
 
   function displayTopTracks(songs, tracks = false) {
     //delete current elements
-    while ($("#spotify-tables").first()) {
-      $("#spotify-tables").first().remove();
-    }
+    $("#spotify-tables").empty();
 
     //create html elements
     let container = document.createElement("div");
