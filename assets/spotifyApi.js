@@ -50,7 +50,7 @@ $(document).ready(function () {
 
     // Make a call using the token
     let topNum = 5;
-    await fetch(baseUrl + `/me/top/artists?limit=${topNum}`, {
+    await fetch(baseUrl + `me/top/artists?limit=${topNum}`, {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
@@ -68,7 +68,7 @@ $(document).ready(function () {
 
     // Make a call using the token
     let topNum = 10;
-    await fetch(baseUrl + `1/me/top/tracks?limit=${topNum}`, {
+    await fetch(baseUrl + `me/top/tracks?limit=${topNum}`, {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
@@ -86,7 +86,7 @@ $(document).ready(function () {
     if (!_token) checkAuth();
 
     // Make a call using the token
-    await fetch(baseUrl + `/artists/${id}/top-tracks?country=${countryCode}`, {
+    await fetch(baseUrl + `artists/${id}/top-tracks?country=${countryCode}`, {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
