@@ -61,6 +61,10 @@ button:active {
   outline: none;
 }
 
+hr {
+  border: 1px solid rgb(26, 32, 47);
+}
+
 /* ---------------------------------------------------------- */
 /*Animations*/
 /* ---------------------------------------------------------- */
@@ -196,6 +200,10 @@ th {
 /* Spotify insert */
 .api-content {
   margin-top: 10px;
+}
+
+#spotify-insert {
+  margin-top: 20px;
 }
 
 .artist-content {
