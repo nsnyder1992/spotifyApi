@@ -26,6 +26,8 @@ $(document).ready(function () {
 
   //variables
   let artists = [];
+  let artistsSongs = [];
+  let topSongs = [];
 
   //click functions
   spotifyApi.click(() => getSpotifyData());
@@ -119,6 +121,23 @@ $(document).ready(function () {
       .then(async (res) => await res.json())
       .then((json) => {
         displayTopTracks(json);
+      })
+      .catch((err) => console.log(err));
+  }
+
+  async function getArtistTracks(id) {
+    if (!_token) checkAuth();
+
+    // Make a call using the token
+    await fetch(`https://api.spotify.com/v1/artists/${id}/top/tracks`, {
+      headers: {
+        Authorization: `Bearer ${_token}`,
+      },
+    })
+      .then(async (res) => await res.json())
+      .then((json) => {
+        console.log(json);
+        // displayTopTracks(json);
       })
       .catch((err) => console.log(err));
   }

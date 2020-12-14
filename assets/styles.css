@@ -3,22 +3,75 @@
 /* ---------------------------------------------------------- */
 
 .nav-bg {
-  background-color: rgb(46 56 80);
+  background-color: rgb(46, 56, 80);
 }
 
 .navbar-dark {
-  background-color: rgb(26 32 47);
+  background-color: rgb(26, 32, 47);
 }
 
 body,
 .light-theme {
-  background-color: rgb(90 94 103);
+  background-color: rgb(90, 94, 103);
   margin: 0;
+}
+
+#spotify-icon {
+  color: rgb(29, 185, 84);
+}
+
+button {
+  font-size: 1.2em;
+  color: rgb(29, 185, 84);
+  background-color: transparent;
+  border: 1px solid rgb(29, 185, 84);
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+}
+
+button:hover {
+  color: rgb(30, 215, 96);
+  border: 1px solid rgb(30, 215, 96);
+  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(28, 155, 82, 0.5) 20%,
+    rgb(29, 185, 84, 0.5) 40%,
+    rgb(30, 215, 96, 0.5) 60%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 240px 200px;
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-name: buttonShimmer;
+  animation-timing-function: linear;
+}
+
+button:after {
+  color: rgb(30, 215, 96);
+  background-color: transparent;
+  border: 1px solid rgb(30, 215, 96);
 }
 
 /* ---------------------------------------------------------- */
 /*Animations*/
 /* ---------------------------------------------------------- */
+@keyframes buttonShimmer {
+  0% {
+    background-radius: 20px;
+    background-position: -240px -100px;
+  }
+
+  100% {
+    background-radius: 20px;
+    background-position: 240px 40px;
+  }
+}
 
 /* ---------------------------------------------------------- */
 /* Horizontal Scroll sections */
@@ -79,13 +132,13 @@ body,
 
 /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(23, 162, 184);
+  background: rgb(29, 185, 84);
   border-radius: 5px;
 }
 
 /* Scrollbar Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(19, 132, 150);
+  background: rgb(30, 215, 96);
 }
 
 /* ---------------------------------------------------------- */
@@ -175,11 +228,11 @@ thead {
 }
 
 .link-icon {
-  color: rgb(23, 162, 184);
+  color: rgb(29, 185, 84);
 }
 
 .link-icon:hover {
-  color: rgb(19, 132, 150);
+  color: rgb(30, 215, 96);
 }
 
 .show {
