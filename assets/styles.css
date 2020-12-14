@@ -204,6 +204,9 @@ th {
 
 #spotify-insert {
   margin-top: 20px;
+  background-color: rgb(48 50 56);
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .artist-content {
