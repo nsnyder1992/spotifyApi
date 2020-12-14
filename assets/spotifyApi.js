@@ -225,7 +225,7 @@ $(document).ready(function () {
       songTr.className = "table-row";
 
       //set text
-      id.innerText = i + 1;
+      id.innerText = parseInt(i) + 1;
       title.innerText = items[i].name;
       album.innerText = items[i].album.name;
       artist.innerText = items[i].artists[0].name;
