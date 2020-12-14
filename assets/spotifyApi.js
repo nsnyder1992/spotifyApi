@@ -155,6 +155,46 @@ $(document).ready(function () {
     console.log(songs);
     let container = document.createElement("div");
 
+    let table = createTable();
+
+    for (i in songs.items) {
+      //add to top songs array
+      topSongs.push(songs.items[i]);
+
+      //create rows
+      let songTr = document.createElement("tr");
+      let id = document.createElement("th");
+      let title = document.createElement("th");
+      let album = document.createElement("th");
+      let artist = document.createElement("th");
+
+      //scope
+      id.scope = "row";
+
+      //classes
+      id.className = "first-col";
+      songTr.className = "table-row";
+
+      //set text
+      id.innerText = i + 1;
+      title.innerText = songs.items[i].name;
+      album.innerText = songs.items[i].album.name;
+      artist.innerText = songs.items[i].artists[0].name;
+
+      //build table
+      songTr.appendChild(id);
+      songTr.appendChild(title);
+      songTr.appendChild(artist);
+      songTr.appendChild(album);
+      tbody.appendChild(songTr);
+    }
+
+    table.appendChild(tbody);
+    container.appendChild(table);
+    $("#spotify-tables").append(container);
+  }
+
+  function createTable() {
     //create table
     let table = document.createElement("table");
     let thead = document.createElement("thead");
@@ -193,42 +233,6 @@ $(document).ready(function () {
     thead.appendChild(tr1);
     table.appendChild(thead);
 
-    items = songs.items === undefined ? songs.items : songs.tracks;
-
-    for (i in items) {
-      //add to top songs array
-      topSongs.push(items[i]);
-
-      //create rows
-      let songTr = document.createElement("tr");
-      let id = document.createElement("th");
-      let title = document.createElement("th");
-      let album = document.createElement("th");
-      let artist = document.createElement("th");
-
-      //scope
-      id.scope = "row";
-
-      //classes
-      id.className = "first-col";
-      songTr.className = "table-row";
-
-      //set text
-      id.innerText = i + 1;
-      title.innerText = items[i].name;
-      album.innerText = items[i].album.name;
-      artist.innerText = items[i].artists[0].name;
-
-      //build table
-      songTr.appendChild(id);
-      songTr.appendChild(title);
-      songTr.appendChild(artist);
-      songTr.appendChild(album);
-      tbody.appendChild(songTr);
-    }
-
-    table.appendChild(tbody);
-    container.appendChild(table);
-    $("#spotify-tables").append(container);
+    return table;
   }
 });
