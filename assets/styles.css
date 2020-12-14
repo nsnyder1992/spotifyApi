@@ -52,7 +52,8 @@ button:hover {
   animation-timing-function: linear;
 }
 
-button:after {
+button:after,
+button:focus {
   color: rgb(30, 215, 96);
   background-color: transparent;
   border: 1px solid rgb(30, 215, 96);
@@ -169,7 +170,7 @@ button:after {
 
 .artist-image {
   width: 160px;
-  border-radius: 5px;
+  border-radius: 7px;
 
   transition: opacity 0.2s, visibility 0.2s;
 }
