@@ -160,7 +160,9 @@ $(document).ready(function () {
 
     //create table
     let [table, tbody] = createTable();
-    let tbody = tracks ? createRows(songs.tracks) : createRows(songs.items);
+    tbody = tracks
+      ? createRows(songs.tracks, tbody)
+      : createRows(songs.items, tbody);
 
     //add elements to the page
     table.appendChild(tbody);
@@ -209,7 +211,7 @@ $(document).ready(function () {
     return [table, tbody];
   }
 
-  function createRows(items) {
+  function createRows(items, tbody) {
     for (i in items) {
       //add to top songs array
       topSongs.push(items[i]);
