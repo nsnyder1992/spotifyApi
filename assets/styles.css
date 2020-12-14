@@ -166,13 +166,13 @@ th {
 /* Scrollbar Track */
 ::-webkit-scrollbar-track {
   background: rgb(193, 198, 209);
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(83 138 102);
-  border-radius: 11px;
+  border-radius: 15px;
 }
 
 /* Scrollbar Handle on hover */
