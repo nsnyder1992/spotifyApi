@@ -84,12 +84,14 @@ $(document).ready(function () {
 
     //create html elements
     let container = document.createElement("div");
+    let hr1 = document.createElement("hr");
     let header = document.createElement("h4");
     let content = document.createElement("div");
     let scrollable = document.createElement("div");
 
     //add bootstrap classes
     container.className = "container";
+
     header.className = "text-white";
     content.className = "text-center";
     scrollable.className = "scrollable-artists spotify-content";
@@ -98,6 +100,7 @@ $(document).ready(function () {
     header.innerText = "Your Top Artists";
 
     //append children
+    container.appendChild(hr1);
     container.appendChild(header);
 
     //loop through each artist and display content
@@ -132,7 +135,7 @@ $(document).ready(function () {
       //add event handler
       $(document).on("click", `#${artContent.id}`, () => {
         //create html elements
-        let tableHeader = document.createElement("div");
+        let tableHeader = document.createElement("h4");
         let hr = document.createElement("hr");
 
         //add text
