@@ -77,6 +77,42 @@ button:active {
 }
 
 /* ---------------------------------------------------------- */
+/* Table sections */
+/* ---------------------------------------------------------- */
+
+table {
+  width: 100%;
+  text-align: left;
+  margin: 25px;
+  border-radius: 5px;
+}
+
+thead {
+  background-color: #101010;
+}
+
+thead tr {
+  border-radius: 5px;
+}
+
+th {
+  width: 2000px;
+}
+
+.first-col {
+  text-align: center;
+}
+
+.table-row:hover {
+  background-color: #7d7e8c !important;
+  cursor: pointer;
+}
+
+thead {
+  background-color: #101010 !important;
+}
+
+/* ---------------------------------------------------------- */
 /* Horizontal Scroll sections */
 /* ---------------------------------------------------------- */
 
@@ -196,38 +232,6 @@ button:active {
 .artist-content:hover .artist-name {
   visibility: visible;
   opacity: 1;
-}
-
-table {
-  width: 100%;
-  text-align: left;
-  margin: 25px;
-  border-radius: 5px;
-}
-
-thead {
-  background-color: #101010;
-}
-
-thead tr {
-  border-radius: 5px;
-}
-
-th {
-  width: 2000px;
-}
-
-.first-col {
-  text-align: center;
-}
-
-.table-row:hover {
-  background-color: #7d7e8c !important;
-  cursor: pointer;
-}
-
-thead {
-  background-color: #101010 !important;
 }
 
 .link-icon {
