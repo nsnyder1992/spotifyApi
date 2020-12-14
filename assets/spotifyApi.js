@@ -95,7 +95,7 @@ $(document).ready(function () {
       .then((json) => {
         console.log(json);
         artistsSongs.push(json);
-        // displayTopTracks(json);
+        displayTopTracks(json);
       })
       .catch((err) => console.log(err));
   }
