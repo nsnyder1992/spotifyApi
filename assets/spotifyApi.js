@@ -142,7 +142,7 @@ $(document).ready(function () {
     //add classes
     container.className = "container";
     table.className = "table-responsive table-dark table-striped";
-    thead.className = "thead-dark";
+    thead.className = "thead-dark table-head";
     songId.className = "first-col";
 
     //set scopes
@@ -178,6 +178,7 @@ $(document).ready(function () {
 
       //classes
       id.className = "first-col";
+      songTr.className = "table-row";
 
       //set text
       id.innerText = i;

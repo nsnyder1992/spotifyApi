@@ -3,39 +3,19 @@
 /* ---------------------------------------------------------- */
 
 .nav-bg {
-  background-color: rgba(77, 95, 138, 1);
+  background-color: rgb(46 56 80);
 }
 
 .navbar-light {
-  background-color: rgba(77, 95, 138, 1);
-  color: rgba(206, 172, 104, 1);
+  background-color: rgb(26 32 47);
 }
 
 body,
 .light-theme {
-  background-color: rgb(120, 133, 161);
+  background-color: rgb(90 94 103);
   margin: 0;
 }
 
-.btn-primary {
-  background-color: rgba(134, 67, 134, 1);
-  border: 1px solid rgba(134, 67, 134, 1);
-  width: 250px;
-}
-
-.btn-primary:hover {
-  background-color: rgba(116, 41, 116, 1);
-  border: 1px solid rgba(116, 41, 116, 1);
-}
-
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  background-color: rgba(116, 41, 116, 1);
-  border: 1px solid rgba(116, 41, 116, 1);
-  box-shadow: none;
-}
 /* ---------------------------------------------------------- */
 /*Animations*/
 /* ---------------------------------------------------------- */
@@ -126,6 +106,9 @@ body,
 }
 
 /* Spotify insert */
+.api-content {
+  margin-top: 10px;
+}
 .spotify-content {
   margin: 10px 0px;
 }
@@ -173,6 +156,10 @@ thead {
   background-color: #101010;
 }
 
+thead tr {
+  border-radius: 5px;
+}
+
 th {
   width: 2000px;
 }
@@ -188,6 +175,14 @@ tr:hover {
 
 thead {
   background-color: #101010 !important;
+}
+
+.link-icon {
+  color: rgb(23, 162, 184);
+}
+
+.link-icon:hover {
+  color: rgb(19, 132, 150);
 }
 
 .show {
