@@ -234,6 +234,6 @@ $(document).ready(function () {
     thead.appendChild(tr1);
     table.appendChild(thead);
 
-    return table, tbody;
+    return [table, tbody];
   }
 });
