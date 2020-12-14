@@ -133,21 +133,8 @@ $(document).ready(function () {
       scrollable.appendChild(artContent);
 
       //add event handler
-      $(document).on("click", `#${artContent.id}`, () => {
-        //create html elements
-        let tableHeader = document.createElement("h4");
-        let hr = document.createElement("hr");
-
-        //add classes
-        tableHeader.className = 'text-white';
-
-        //add text
-        tableHeader.innerText = `${artist.name}'s Top Tracks:`;
-
-        //append children
-        container.appendChild(hr);
-        container.appendChild(tableHeader);
-        displayArtistContent(artContent.id);
+      $(document).on("click", `#${artist.id}`, () => {
+        displayArtistContent(artist, artist.id);
       });
     });
 
@@ -157,19 +144,29 @@ $(document).ready(function () {
     $("#spotify-insert").append(container);
   }
 
-  function displayArtistContent(artistId) {
-    displayTopTracks(artistsSongs[artistId], true);
+  function displayArtistContent(artist, artistId) {
+    displayTopTracks(artist, artistsSongs[artistId], true);
   }
 
-  function displayTopTracks(songs, tracks = false) {
+  function displayTopTracks(artist, songs, tracks = false) {
     //delete current elements
     $("#spotify-tables").empty();
 
     //create html elements
     let container = document.createElement("div");
+    let tableHeader = document.createElement("h4");
+    let hr = document.createElement("hr");
 
     //add classes
     container.className = "container";
+    tableHeader.className = "text-white";
+
+    //add text
+    tableHeader.innerText = `${artist.name}'s Top Tracks:`;
+
+    //append children
+    $("#spotify-tables").append(hr);
+    $("#spotify-tables").append(tableHeader);
 
     //create table
     let [table, tbody] = createTable();
@@ -230,7 +227,7 @@ $(document).ready(function () {
       topSongs.push(items[i]);
 
       //create rows
-      let songTr = document.createElement("tr");
+      let row = document.createElement("tr");
       let id = document.createElement("th");
       let title = document.createElement("th");
       let album = document.createElement("th");
@@ -241,7 +238,7 @@ $(document).ready(function () {
 
       //classes
       id.className = "first-col";
-      songTr.className = "table-row";
+      row.className = "table-row";
 
       //set text
       id.innerText = parseInt(i) + 1;
@@ -250,11 +247,11 @@ $(document).ready(function () {
       artist.innerText = items[i].artists[0].name;
 
       //build table
-      songTr.appendChild(id);
-      songTr.appendChild(title);
-      songTr.appendChild(artist);
-      songTr.appendChild(album);
-      tbody.appendChild(songTr);
+      row.appendChild(id);
+      row.appendChild(title);
+      row.appendChild(artist);
+      row.appendChild(album);
+      tbody.appendChild(row);
     }
 
     return tbody;
