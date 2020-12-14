@@ -157,7 +157,7 @@ $(document).ready(function () {
     //add classes
     container.className = "container";
 
-    let table = createTable();
+    let [table, tbody] = createTable();
 
     for (i in songs.items) {
       //add to top songs array
@@ -234,6 +234,6 @@ $(document).ready(function () {
     thead.appendChild(tr1);
     table.appendChild(thead);
 
-    return table;
+    return table, tbody;
   }
 });
