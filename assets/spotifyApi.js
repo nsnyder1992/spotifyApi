@@ -7,6 +7,7 @@ $(document).ready(function () {
   const clientId = "60c69366ae1e45d1adbfb0614a57e993";
   const redirectUri = "https://nsnyder1992.github.io/spotifyApi/";
   const scopes = ["user-top-read"];
+  const baseUrl = "https://api.spotify.com/v1/";
 
   // Get the hash of the url
   const hash = window.location.hash
@@ -49,7 +50,7 @@ $(document).ready(function () {
 
     // Make a call using the token
     let topNum = 5;
-    await fetch(`https://api.spotify.com/v1/me/top/artists?limit=${topNum}`, {
+    await fetch(baseUrl + `/me/top/artists?limit=${topNum}`, {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
@@ -67,7 +68,7 @@ $(document).ready(function () {
 
     // Make a call using the token
     let topNum = 10;
-    await fetch(`https://api.spotify.com/v1/me/top/tracks?limit=${topNum}`, {
+    await fetch(baseUrl + `1/me/top/tracks?limit=${topNum}`, {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
@@ -80,10 +81,12 @@ $(document).ready(function () {
   }
 
   async function getArtistTracks(id) {
+    let countryCode = "US";
+
     if (!_token) checkAuth();
 
     // Make a call using the token
-    await fetch(`https://api.spotify.com/v1/artists/${id}/top-tracks`, {
+    await fetch(baseUrl + `/artists/${id}/top-tracks?country=${countryCode}`, {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
