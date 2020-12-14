@@ -27,7 +27,7 @@ $(document).ready(function () {
 
   //variables
   let artists = [];
-  let artistsSongs = [];
+  let artistsSongs = {};
   let topSongs = [];
 
   //click functions
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
   function getSpotifyData() {
     getTopArtists();
-    getTopTracks();
+    //getTopTracks();
   }
 
   async function getTopArtists() {
@@ -56,10 +56,7 @@ $(document).ready(function () {
       },
     })
       .then(async (res) => await res.json())
-      .then((json) => {
-        console.log(json);
-        displayArtists(json);
-      })
+      .then((json) => displayArtists(json))
       .catch((err) => console.log(err));
   }
 
@@ -94,8 +91,8 @@ $(document).ready(function () {
       .then(async (res) => await res.json())
       .then((json) => {
         console.log(json);
-        artistsSongs.push(json);
-        displayTopTracks(json, true);
+        artistsSongs[id] = json;
+        //displayTopTracks(json, true);
       })
       .catch((err) => console.log(err));
   }
@@ -120,35 +117,45 @@ $(document).ready(function () {
 
       //create html elements
       let artContent = document.createElement("div");
-      let a = document.createElement("a");
+      //let a = document.createElement("a");
       let img = document.createElement("img");
       let name = document.createElement("h6");
 
       //add classes
       artContent.className = "artist-content";
-      a.className = "artist-link";
+      artContent.id = artist.id;
+      //a.className = "artist-link";
       name.className = "artist-name";
       img.className = "artist-image";
 
       //add content
-      a.href = artist.external_urls.spotify;
-      a.target = "blank";
+      //a.href = artist.external_urls.spotify;
+      //a.target = "blank";
       name.innerText = artist.name;
       img.src = artist.images[2].url;
       artContent.id = artist.id;
 
       //create layout of spotify-content
-      a.appendChild(img);
-      artContent.appendChild(a);
-      // artContent.appendChild(img);
+      //a.appendChild(img);
+      //artContent.appendChild(a);
+      artContent.appendChild(img);
       artContent.appendChild(name);
       scrollable.appendChild(artContent);
+
+      //add event handler
+      $(document).on("click", `#${artContent.id}`, () =>
+        displayArtistContent(artContent.id)
+      );
     });
 
     //insert content at insert point
     content.appendChild(scrollable);
     container.appendChild(content);
     $("#spotify-insert").append(container);
+  }
+
+  function displayArtistContent(artistId) {
+    displayTopTracks(artistsSongs[artistId], true);
   }
 
   function displayTopTracks(songs, tracks = false) {
