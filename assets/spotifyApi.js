@@ -138,6 +138,9 @@ $(document).ready(function () {
         let tableHeader = document.createElement("h4");
         let hr = document.createElement("hr");
 
+        //add classes
+        tableHeader.className = 'text-white';
+
         //add text
         tableHeader.innerText = `${artist.name}'s Top Tracks:`;
 
