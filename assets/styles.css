@@ -6,7 +6,7 @@
   background-color: rgb(46 56 80);
 }
 
-.navbar-light {
+.navbar-dark {
   background-color: rgb(26 32 47);
 }
 
@@ -79,13 +79,13 @@ body,
 
 /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(89 99 119);
+  background: rgb(23, 162, 184);
   border-radius: 5px;
 }
 
 /* Scrollbar Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(77, 95, 138, 1);
+  background: rgb(19, 132, 150);
 }
 
 /* ---------------------------------------------------------- */
@@ -108,9 +108,6 @@ body,
 /* Spotify insert */
 .api-content {
   margin-top: 10px;
-}
-.spotify-content {
-  margin: 10px 0px;
 }
 
 .artist-content {
@@ -168,7 +165,7 @@ th {
   text-align: center;
 }
 
-tr:hover {
+.table-row:hover {
   background-color: #7d7e8c !important;
   cursor: pointer;
 }
