@@ -154,6 +154,8 @@ $(document).ready(function () {
   function displayTopTracks(songs) {
     console.log(songs);
     let container = document.createElement("div");
+    //add classes
+    container.className = "container";
 
     let table = createTable();
 
@@ -208,7 +210,6 @@ $(document).ready(function () {
     let songArtist = document.createElement("th");
 
     //add classes
-    container.className = "container";
     table.className = "table-responsive table-dark table-striped";
     thead.className = "thead-dark table-head";
     songId.className = "first-col";
