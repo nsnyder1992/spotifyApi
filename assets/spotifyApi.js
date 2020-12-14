@@ -62,52 +62,6 @@ $(document).ready(function () {
       .catch((err) => console.log(err));
   }
 
-  function displayArtists(json) {
-    let container = document.createElement("div");
-    let content = document.createElement("div");
-    let scrollable = document.createElement("div");
-
-    //add bootstrap classes
-    container.className = "container";
-    content.className = "text-center";
-    scrollable.className = "scrollable-artists spotify-content";
-
-    json.items.map((artist) => {
-      let artContent = document.createElement("div");
-      let a = document.createElement("a");
-      let img = document.createElement("img");
-      let name = document.createElement("h6");
-
-      //add to artists array
-      artists.push(artist);
-
-      //add classes
-      artContent.className = "artist-content";
-      a.className = "artist-link";
-      name.className = "artist-name";
-      img.className = "artist-image";
-
-      //add content
-      a.href = artist.external_urls.spotify;
-      a.target = "blank";
-      name.innerText = artist.name;
-      img.src = artist.images[2].url;
-      artContent.id = artist.id;
-
-      //create layout of spotify-content
-      a.appendChild(img);
-      artContent.appendChild(a);
-      // artContent.appendChild(img);
-      artContent.appendChild(name);
-      scrollable.appendChild(artContent);
-    });
-
-    //insert content at insert point
-    content.appendChild(scrollable);
-    container.appendChild(content);
-    $("#spotify-insert").append(container);
-  }
-
   async function getTopTracks() {
     if (!_token) checkAuth();
 
@@ -140,6 +94,56 @@ $(document).ready(function () {
         // displayTopTracks(json);
       })
       .catch((err) => console.log(err));
+  }
+
+  function displayArtists(json) {
+    let container = document.createElement("div");
+    let content = document.createElement("div");
+    let scrollable = document.createElement("div");
+
+    //add bootstrap classes
+    container.className = "container";
+    content.className = "text-center";
+    scrollable.className = "scrollable-artists spotify-content";
+
+    json.items.map((artist) => {
+      //add to artists array
+      artists.push(artist);
+
+      //get artists top songs
+      console.log(artist);
+
+      //create html elements
+      let artContent = document.createElement("div");
+      let a = document.createElement("a");
+      let img = document.createElement("img");
+      let name = document.createElement("h6");
+
+      //add classes
+      artContent.className = "artist-content";
+      a.className = "artist-link";
+      name.className = "artist-name";
+      img.className = "artist-image";
+
+      //add content
+      a.href = artist.external_urls.spotify;
+      a.target = "blank";
+      name.innerText = artist.name;
+      img.src = artist.images[2].url;
+      artContent.id = artist.id;
+
+      //create layout of spotify-content
+      a.appendChild(img);
+      artContent.appendChild(a);
+      // artContent.appendChild(img);
+      artContent.appendChild(name);
+      scrollable.appendChild(artContent);
+    });
+
+    //insert content at insert point
+    content.appendChild(scrollable);
+    container.appendChild(content);
+    $("#spotify-insert").append(container);
   }
 
   function displayTopTracks(songs) {
@@ -185,6 +189,9 @@ $(document).ready(function () {
     table.appendChild(thead);
 
     for (i in songs.items) {
+      //add to top songs array
+      topSongs.push(songs.items[i]);
+
       //create rows
       let songTr = document.createElement("tr");
       let id = document.createElement("th");
