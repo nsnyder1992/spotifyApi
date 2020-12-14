@@ -95,8 +95,12 @@ $(document).ready(function () {
     scrollable.className = "scrollable-artists spotify-content";
 
     //set text
-    header.innerText = "Top Artists";
+    header.innerText = "Your Top Artists";
 
+    //append children
+    container.appendChild(header);
+
+    //loop through each artist and display content
     json.items.map((artist) => {
       //add to artists array
       artists.push(artist);
@@ -106,27 +110,21 @@ $(document).ready(function () {
 
       //create html elements
       let artContent = document.createElement("div");
-      //let a = document.createElement("a");
       let img = document.createElement("img");
       let name = document.createElement("h6");
 
       //add classes
       artContent.className = "artist-content";
       artContent.id = artist.id;
-      //a.className = "artist-link";
       name.className = "artist-name";
       img.className = "artist-image";
 
       //add content
-      //a.href = artist.external_urls.spotify;
-      //a.target = "blank";
       name.innerText = artist.name;
       img.src = artist.images[2].url;
       artContent.id = artist.id;
 
       //create layout of spotify-content
-      //a.appendChild(img);
-      //artContent.appendChild(a);
       artContent.appendChild(img);
       artContent.appendChild(name);
       scrollable.appendChild(artContent);
@@ -175,8 +173,6 @@ $(document).ready(function () {
 
     //add elements to the page
     table.appendChild(tbody);
-    container.appendChild(hr);
-    container.appendChild();
     container.appendChild(table);
     $("#spotify-tables").append(container);
   }
