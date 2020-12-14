@@ -96,15 +96,17 @@ thead {
 }
 
 thead tr {
+  width: 100%;
   border-radius: 5px;
 }
 
 th {
-  width: 2000px;
+  width: 1000px;
 }
 
 .first-col {
   text-align: center;
+  width 
 }
 
 .table-row:hover {
@@ -203,10 +205,16 @@ th {
 }
 
 .spotify-content {
-  margin-top: 20px;
+  margin: 20px;
   background-color: rgb(48 50 56);
   padding: 20px;
   border-radius: 20px;
+}
+
+#spotify-tables {
+  position: relative;
+  left: calc(50% - 475px);
+  width: 900px;
 }
 
 .artist-content {
@@ -252,3 +260,4 @@ th {
 .show {
   display: block;
 }
+
