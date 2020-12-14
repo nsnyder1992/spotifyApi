@@ -193,9 +193,11 @@ $(document).ready(function () {
     thead.appendChild(tr1);
     table.appendChild(thead);
 
-    for (i in songs.items) {
+    items = songs.items instanceof undefined ? songs.items : songs.tracks;
+
+    for (i in items) {
       //add to top songs array
-      topSongs.push(songs.items[i]);
+      topSongs.push(items[i]);
 
       //create rows
       let songTr = document.createElement("tr");
@@ -213,9 +215,9 @@ $(document).ready(function () {
 
       //set text
       id.innerText = i + 1;
-      title.innerText = songs.items[i].name;
-      album.innerText = songs.items[i].album.name;
-      artist.innerText = songs.items[i].artists[0].name;
+      title.innerText = items[i].name;
+      album.innerText = items[i].album.name;
+      artist.innerText = items[i].artists[0].name;
 
       //build table
       songTr.appendChild(id);
