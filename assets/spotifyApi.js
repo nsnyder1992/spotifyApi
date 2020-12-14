@@ -155,7 +155,7 @@ $(document).ready(function () {
     //create html elements
     let container = document.createElement("div");
     let tableHeader = document.createElement("h4");
-    // let hr = document.createElement("hr");
+    let hr = document.createElement("hr");
 
     //add classes
     container.className = "container";
@@ -165,8 +165,8 @@ $(document).ready(function () {
     tableHeader.innerText = `${artist.name}'s Top Tracks:`;
 
     //append children
-    // $("#spotify-tables").append(hr);
-    $("#spotify-tables").append(tableHeader);
+    $("#spotify-insert").append(hr);
+    $("#spotify-insert").append(tableHeader);
 
     //create table
     let [table, tbody] = createTable();
