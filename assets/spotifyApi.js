@@ -98,6 +98,12 @@ $(document).ready(function () {
   }
 
   function displayArtists(json) {
+    //delete current elements
+    while ($("#spotify-tables").first()) {
+      $("#spotify-tables").first().remove();
+    }
+
+    //create html elements
     let container = document.createElement("div");
     let content = document.createElement("div");
     let scrollable = document.createElement("div");
@@ -159,7 +165,12 @@ $(document).ready(function () {
   }
 
   function displayTopTracks(songs, tracks = false) {
-    console.log(songs);
+    //delete current elements
+    while ($("#spotify-tables").first()) {
+      $("#spotify-tables").first().remove();
+    }
+
+    //create html elements
     let container = document.createElement("div");
 
     //add classes
