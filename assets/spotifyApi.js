@@ -193,7 +193,7 @@ $(document).ready(function () {
     thead.appendChild(tr1);
     table.appendChild(thead);
 
-    items = songs.items instanceof undefined ? songs.items : songs.tracks;
+    items = songs.items === undefined ? songs.items : songs.tracks;
 
     for (i in items) {
       //add to top songs array
