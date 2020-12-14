@@ -83,7 +83,7 @@ $(document).ready(function () {
     if (!_token) checkAuth();
 
     // Make a call using the token
-    await fetch(`https://api.spotify.com/v1/artists/${id}/top/tracks`, {
+    await fetch(`https://api.spotify.com/v1/artists/${id}/top-tracks`, {
       headers: {
         Authorization: `Bearer ${_token}`,
       },
