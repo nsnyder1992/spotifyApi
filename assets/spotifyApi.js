@@ -91,6 +91,7 @@ $(document).ready(function () {
       .then(async (res) => await res.json())
       .then((json) => {
         console.log(json);
+        artistsSongs.push(json);
         // displayTopTracks(json);
       })
       .catch((err) => console.log(err));
@@ -112,6 +113,7 @@ $(document).ready(function () {
 
       //get artists top songs
       console.log(artist);
+      getArtistTracks(artist.id);
 
       //create html elements
       let artContent = document.createElement("div");
@@ -207,7 +209,7 @@ $(document).ready(function () {
       songTr.className = "table-row";
 
       //set text
-      id.innerText = i;
+      id.innerText = i + 1;
       title.innerText = songs.items[i].name;
       album.innerText = songs.items[i].album.name;
       artist.innerText = songs.items[i].artists[0].name;
