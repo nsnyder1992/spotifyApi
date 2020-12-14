@@ -171,13 +171,13 @@ th {
 
 /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(29, 185, 84);
-  border-radius: 5px;
+  background: rgb(83 138 102);
+  border-radius: 11px;
 }
 
 /* Scrollbar Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(30, 215, 96);
+  background: rgb(121 199 148);
 }
 
 /* ---------------------------------------------------------- */
