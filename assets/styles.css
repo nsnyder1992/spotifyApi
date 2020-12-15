@@ -62,7 +62,9 @@ button:active {
 }
 
 hr {
-  border: 1px solid rgb(26, 32, 47);
+  background-color: rgb(33, 33, 39);
+  height: 1px;
+  border: none;
 }
 
 /* ---------------------------------------------------------- */

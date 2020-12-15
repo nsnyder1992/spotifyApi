@@ -144,6 +144,7 @@ $(document).ready(function () {
     $("#spotify-insert").append(container);
   }
 
+  //wrapper function to display songs of certain artists
   function displayArtistContent(artist, artistId) {
     displayTopTracks(artist, artistsSongs[artistId], true);
   }
@@ -194,7 +195,7 @@ $(document).ready(function () {
     let songArtist = document.createElement("th");
 
     //add classes
-    table.className = "table-responsive table-dark table-striped";
+    table.className = "table-responsive-md table-dark";
     thead.className = "thead-dark table-head";
     songId.className = "first-col";
 
