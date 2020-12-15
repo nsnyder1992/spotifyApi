@@ -111,11 +111,6 @@ th {
   width 
 }
 
-.table-row:hover {
-  background-color: #7d7e8c !important;
-  cursor: pointer;
-}
-
 /* ---------------------------------------------------------- */
 /* Horizontal Scroll sections */
 /* ---------------------------------------------------------- */

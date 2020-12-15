@@ -199,7 +199,7 @@ $(document).ready(function () {
     let songArtist = document.createElement("th");
 
     //add classes
-    table.className = "table-responsive-md table-dark";
+    table.className = "table-responsive-md table-dark table-hover";
     thead.className = "thead-dark table-head";
     songId.className = "first-col";
 
