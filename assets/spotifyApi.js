@@ -81,17 +81,16 @@ $(document).ready(function () {
   function displayArtists(json) {
     //delete current elements
     $("#spotify-insert").empty();
-
+    console.log("Creating components");
     //create html elements
     let container = document.createElement("div");
-    // let hr1 = document.createElement("hr");
     let header = document.createElement("h4");
     let content = document.createElement("div");
     let scrollable = document.createElement("div");
 
-    //add bootstrap classes
+    console.log("Adding classes");
+    //add classes
     container.className = "container";
-
     header.className = "text-white";
     content.className = "text-center";
     scrollable.className = "scrollable-artists spotify-content";
@@ -100,9 +99,9 @@ $(document).ready(function () {
     header.innerText = "Your Top Artists";
 
     //append children
-    // container.appendChild(hr1);
     container.appendChild(header);
 
+    console.log("Looping through aritists");
     //loop through each artist and display content
     json.items.map((artist) => {
       //add to artists array
@@ -138,6 +137,7 @@ $(document).ready(function () {
       });
     });
 
+    console.log("appending components");
     //insert content at insert point
     content.appendChild(scrollable);
     container.appendChild(content);
