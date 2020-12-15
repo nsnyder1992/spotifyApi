@@ -108,7 +108,7 @@ th {
 
 .first-col {
   text-align: center;
-  width 
+  width: 20px;
 }
 
 /* ---------------------------------------------------------- */
@@ -257,4 +257,3 @@ th {
 .show {
   display: block;
 }
-
