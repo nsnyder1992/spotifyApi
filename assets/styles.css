@@ -203,14 +203,11 @@ th {
 }
 
 .spotify-content {
+  display: none;
   margin: 20px;
-  background-color: transparent;
+  background-color: rgb(48, 50, 56);
   padding: 20px;
   border-radius: 20px;
-}
-
-.spotify-content .dark-bg {
-  background-color: rgb(48, 50, 56);
 }
 
 .artist-content {

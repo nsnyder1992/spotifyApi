@@ -139,13 +139,12 @@ $(document).ready(function () {
     content.appendChild(scrollable);
     container.appendChild(content);
     $("#spotify-insert").append(container);
-    $(".spotify-content").addClass("dark-bg");
+    $(".spotify-content").addClass("show");
   }
 
   //wrapper function to display songs of certain artists
   function displayArtistContent(artist, artistId) {
     displayTopTracks(artist, artistsSongs[artistId], true);
-    $(".spotify-content").addClass("dark-bg");
   }
 
   function displayTopTracks(artist, songs, tracks = false) {
