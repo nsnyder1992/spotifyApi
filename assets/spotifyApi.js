@@ -166,8 +166,8 @@ $(document).ready(function () {
     tableHeader.innerText = `${artist.name}'s Top Tracks:`;
 
     //append children
-    $("#spotify-insert").append(hr);
-    $("#spotify-insert").append(tableHeader);
+    $("#spotify-tables").append(hr);
+    $("#spotify-tables").append(tableHeader);
 
     //create table
     let [table, tbody] = createTable();
