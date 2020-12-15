@@ -204,7 +204,7 @@ th {
 
 .spotify-content {
   display: none;
-  margin: 20px;
+  margin: 20px 0px;
   background-color: rgb(48, 50, 56);
   padding: 20px;
   border-radius: 20px;
