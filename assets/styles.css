@@ -65,6 +65,7 @@ button:active {
   background-color: rgb(33, 33, 39);
   height: 1px;
   border: none;
+  max-width: 90%;
 }
 
 /* ---------------------------------------------------------- */
@@ -89,7 +90,7 @@ button:active {
 table {
   width: 100%;
   text-align: left;
-  margin: 25px;
+  margin: 25px 0px;
   border-radius: 5px;
 }
 
@@ -108,7 +109,7 @@ th {
 
 .first-col {
   text-align: center;
-  width: 20px;
+  width: 150px;
 }
 
 /* ---------------------------------------------------------- */
@@ -203,15 +204,13 @@ th {
 
 .spotify-content {
   margin: 20px;
-  background-color: rgb(48 50 56);
+  background-color: transparent;
   padding: 20px;
   border-radius: 20px;
 }
 
-#spotify-tables {
-  position: relative;
-  left: calc(50% - 475px);
-  width: 900px;
+.spotify-content .dark-bg {
+  background-color: rgb(48, 50, 56);
 }
 
 .artist-content {

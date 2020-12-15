@@ -81,14 +81,13 @@ $(document).ready(function () {
   function displayArtists(json) {
     //delete current elements
     $("#spotify-insert").empty();
-    console.log("Creating components");
+
     //create html elements
     let container = document.createElement("div");
     let header = document.createElement("h4");
     let content = document.createElement("div");
     let scrollable = document.createElement("div");
 
-    console.log("Adding classes");
     //add classes
     container.className = "container";
     header.className = "text-white";
@@ -101,7 +100,6 @@ $(document).ready(function () {
     //append children
     container.appendChild(header);
 
-    console.log("Looping through aritists");
     //loop through each artist and display content
     json.items.map((artist) => {
       //add to artists array
@@ -137,11 +135,11 @@ $(document).ready(function () {
       });
     });
 
-    console.log("appending components");
     //insert content at insert point
     content.appendChild(scrollable);
     container.appendChild(content);
     $("#spotify-insert").append(container);
+    $(".spotify-content").addClass("dark-bg");
   }
 
   //wrapper function to display songs of certain artists
