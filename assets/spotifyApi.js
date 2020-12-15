@@ -145,6 +145,7 @@ $(document).ready(function () {
   //wrapper function to display songs of certain artists
   function displayArtistContent(artist, artistId) {
     displayTopTracks(artist, artistsSongs[artistId], true);
+    $(".spotify-content").addClass("dark-bg");
   }
 
   function displayTopTracks(artist, songs, tracks = false) {
