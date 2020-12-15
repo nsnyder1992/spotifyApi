@@ -161,6 +161,10 @@ $(document).ready(function () {
     //add classes
     container.className = "container";
     tableHeader.className = "text-white";
+    hr.className = "my-4";
+
+    //add ids
+    hr.id = "divider";
 
     //add text
     tableHeader.innerText = `${artist.name}'s Top Tracks:`;

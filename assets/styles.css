@@ -61,7 +61,7 @@ button:active {
   outline: none;
 }
 
-hr {
+#divider {
   background-color: rgb(33, 33, 39);
   height: 1px;
   border: none;
