@@ -259,4 +259,14 @@ $(document).ready(function () {
 
     return tbody;
   }
+
+  function setButtonText() {
+    const spotifyBtn = document.getElementById("spotify");
+
+    _token
+      ? (spotifyBtn.textContent = "Try it out!")
+      : (spotifyBtn.textContent = "Authorize");
+  }
+
+  window.addEventListener("load", setButtonText);
 });
